@@ -13,6 +13,7 @@ subprocess.call(['rm', 'prog'])
 blankline = '\n'
 print 3 * blankline
 
+
 # get all the files with test*.cpp
 test_case = glob.glob('test*.cpp')
 count_success = 0
