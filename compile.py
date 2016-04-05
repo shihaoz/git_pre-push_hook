@@ -7,6 +7,8 @@ ret = subprocess.call(cmd)
 if ret != 0:
 	print 'failed compiling main.c, exiting'
 	exit(1)
+# remove the binary
+subprocess.call(['rm', 'prog'])
 
 blankline = '\n'
 print 3 * blankline
@@ -43,3 +45,5 @@ if count_failure > 0:
 	exit(1)
 
 print 'Status: Compilation finished, ready to push'
+# remove the binary
+subprocess.call(['rm', 'test'])

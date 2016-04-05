@@ -1,5 +1,6 @@
 import sys
-import re #regular expression
+# regular expression
+import re
 
 if len(sys.argv) < 4:
   print 'usage: <search word> <minimum appearance> <file_name1> ..'
@@ -21,6 +22,5 @@ for idx in xrange(3, len(sys.argv)):
   matches = re.findall(pattern, ifstream.read())
 
   if len(matches) >= min_count:
-  	print file_names
-  
+    print file_name
   ifstream.close()
