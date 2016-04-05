@@ -16,15 +16,27 @@ class _searcher:
   def __init__(self):
     return
 
+  return_list = []
+  index = 0
+
+  def next(self):
+    if self.index > len(self.return_list) - 1:
+      raise StopIteration
+    ret = self.return_list[self.index]
+    self.index += 1
+    return ret
+
+  def __iter__(self):
+    return self
+
   def search(self, word, min_count, file_list):
     pattern = r'{0}'.format(word)
-    return_list = []
+
     for file_name in file_list:
       ifstream = open(file_name, 'rU')
       matches = re.findall(pattern, ifstream.read())
 
       if len(matches) >= min_count:
-        return_list.append(file_name)
+        self.return_list.append(file_name)
 
-    self.call_count += 1
-    return return_list
+    return self
