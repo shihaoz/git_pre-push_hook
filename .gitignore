@@ -1,1 +1,6 @@
 *.pyc
+*.com
+*.class
+*.dll
+*.exe
+*.o
